@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../css/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../library/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class='with-3d-shadow with-transitions'>
+<svg id="chart1"></svg>
+
+<script>
+
+var stackedData = [{
+    "key": "Stroke",
+    "values": [
+      [2000, 2043.3],
+      [2012, 1997.7]
+  ]
+}, {
+    "key": "Chronic obstructive pulmonary disease",
+    "values": [
+      [2000, 1460.2],
+      [2012, 1305.6]
+  ]
+}, {
+    "key": "Lower respiratory infections",
+    "values": [
+      [2000, 3402.0],
+      [2012, 2075.7]
+  ]
+}, {
+    "key": "Diabetes mellitus",
+    "values": [
+      [2000, 719.5],
+      [2012, 837.5]
+  ]
+}, {
+    "key": "Breast cancer",
+    "values": [
+      [2000, 239.2],
+      [2012, 250.4]
+  ]
+}, {
+    "key": "Self-harm",
+    "values": [
+      [2000, 729.4],
+      [2012, 556.3]
+  ]
+}, {
+    "key": "Liver cancer",
+    "values": [
+      [2000, 290],
+      [2012, 300.5]
+  ]
+}, {
+    "key": "Road injury",
+    "values": [
+      [2000, 1129.0],
+      [2012, 1112.6]
+  ]
+}, {
+    "key": "Cardiomyopathy, myocarditis, endocarditis",
+    "values": [
+      [2000, 221.1],
+      [2012, 206.4]
+  ]
+}];
+
+
+var colors = d3.scale.category20c();
+
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.stackedAreaChart()
+            .useInteractiveGuideline(true)
+            .x(function(d) { return d[0] })
+            .y(function(d) { return d[1] })
+            .controlLabels({stacked: "Stacked"})
+            .duration(1000);
+
+        // chart.xAxis.tickFormat(function(d) { return d3.time.format('%Y')(new Date(d))});
+        chart.xAxis.tickValues('2011', '2012');
+        chart.yAxis.tickFormat(d3.format(',.0f'));
+
+        chart.legend.vers('furious');
+
+        d3.select('#chart1')
+            .datum(stackedData)
+            .transition().duration(50000)
+            .call(chart)
+            .each('start', function() {
+                setTimeout(function() {
+                    d3.selectAll('#chart1 *').each(function() {
+                        if(this.__transition__)
+                            this.__transition__.duration = 1;
+                    })
+                }, 0)
+            });
+
+        nv.utils.windowResize(chart.update);
+        return chart;
+    });
+
+
+</script>
+</body>
+</html>

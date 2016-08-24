@@ -1,0 +1,208 @@
+.menu {
+    width: 100%;
+    height: 136px;
+    z-index: 10;
+    background-color: #00b6ef;
+    color: #ffffff;
+}
+
+.container2 {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+.center {
+    text-align: center;
+}
+
+#continue {
+    margin_top: 55px;
+}
+
+.hide {
+    display: none;
+}
+
+.dont_show{
+    visibility: hidden;
+    margin-top: -100%;
+}
+
+.s1-img {
+    height: 100px;
+}
+
+.container-100{
+    width: 100%;
+}
+
+.space-s {
+    height: 60px;
+}
+
+.space-m {
+    height: 100px;
+}
+
+.lineBox {
+    padding: 8px 15px;
+    display: inline-block;
+    border: 1px dotted #33c3f0;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+div.tooltip {   
+    position: absolute;         
+    text-align: center;         
+    width: 70px;                    
+    height: 25px;                   
+    padding: 2px;               
+    font: 12px sans-serif;      
+    background: lightblue; 
+    border: 0px;        
+    border-radius: 8px;         
+    pointer-events: none;           
+}
+
+body { font: 11px Arial;} 
+
+path { 
+    stroke: blue;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    shape-rendering: crispEdges;
+}
+
+ #wrap { width: 300; height: 200px; padding: 0; overflow: hidden; }
+    #frame { width: 600px; height: 250px;}
+    #frame {
+        -ms-zoom: 0.75;
+        -moz-transform: scale(0.75);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.75);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.75);
+        -webkit-transform-origin: 0 0;
+    }
+
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 5;
+    padding: 0;
+}
+
+.overlayDrop {
+    display: absolute;
+}
+
+.map-container{
+    display: inline-block;
+    position: relative;
+}
+.full-width-slider .ui-slider-track {
+    margin-left: 15px;
+}
+
+.full-width-slider input.ui-slider-input {
+    display: none;
+}
+
+/*.container {
+  max-width: 400px;
+  background-color: black;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}*/
+/*.container div {
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+  display: none;
+}*/
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: absolute;
+}
+
+.next {
+  right: 5px;
+}
+
+.prev {
+  left: 5px;
+}
+
+/*This is the motion chart*/
+#chart {
+    margin-left: 0px;
+    height: 506px;
+}
+text {
+    font: 10px sans-serif;
+}
+.dot {
+    stroke: #000;
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.label {
+    fill: #777;
+}
+.country {
+    font: 400 48px"Helvetica Neue";
+    text-anchor:center;
+    fill: #777;
+}
+.year.label {
+    font: 400 120px"Helvetica Neue";
+    fill: #ddd;
+}
+.year.label.active {
+    fill: #aaa;
+}
+.hidden {
+    color: #f00;
+}
+.visible {
+    color: #0f0;
+}
+.overlay {
+    fill: none;
+    pointer-events: all;
+    cursor: ns-resize;
+}
+.d3-tip {
+    line-height: 1;
+    font-family: Lucida Grande, Lucida Sans Unicode, Arial, Helvetica;
+    font-size: 12px;
+    padding: 12px;
+    background: #EFEFEF;
+    color: #253756;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+}

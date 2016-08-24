@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Affecting DALY</title>
+  <meta name = "description" content="">
+  <meta name = "author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name = "viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--   <link href = "//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel = "stylesheet" href = "css/normalize.css"> <!-- reads css -->
+  <link rel = "stylesheet" href = "css/skeleton.css">
+  <link rel = "stylesheet" href = "css/myStyleSheet.css">
+  <link rel = "stylesheet" href = "css/custom.css">
+  <link rel = "stylesheet" href = "css/d3.geomap.css">
+
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel = "icon" type = "image/png" href = "images/siteLogo2.png">
+
+</head>
+<body>
+<div class = "container2"> <!-- sets the conter, format of the html -->
+  <!-- Section 1 -->
+  <div class = "center">
+    <h1><Strong>Affecting the World DALY</Strong></h1>
+    <h5>The real representation of life expectancy</h5>
+    <a id = "continue" class = "button button-primary" href="#s2" onclick="$('#s2').removeClass('dont_show')">Continue</a>
+  </div>
+
+  <!-- Three Column information -->
+  <div class= "value-props row">
+    <div class= "four columns value-prop">
+      <img class = "value-img" src = "images/disability.svg" style="width:250px; height:200px;"> <!-- load image -->
+      People across the world are affected by <b>diseases</b>, <b>injuries</b> and <b>disabilities</b>.
+      The time spent living with these burdens combined with the time lost comes
+      together as <b>Disability-adjusted life years (DALY)</b>. This is a
+      a measure of overall burden on individuals. 
+    </div>
+
+    <div class = "four columns value-prop">
+      <img class = "value-img" src = "images/s1worldbank-1.svg" style="width:250px; height:200px;">
+      <b>Data from World Bank </b>and the <b> World Health Organisation</b> are used and interact with
+      in varieties of ways to visualise the <b>life expectancy</b> and <b>DALY</b>.
+    </div>
+
+    <div class = "four columns value-prop"> <!-- use skeleton for layout -->
+      <img class = "value-img" src = "images/bar.png" style="width:230px; height:200px;">
+        <b>Visualisation</b> are produced based upon the factors that affects <b>life expectancy</b> as well as
+        the factors that affects the <b>DALY</b>. Different <b>Countries</b> are compared to view how significant
+        <b>DALY</b> affects it based upon the <b>year</b>.
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div id = "s2" class = "s2 dont_show"> <!-- hide the section -->
+    <h2 class = "title center">Life Expectancy</h2>
+    <div class = "row center">
+      <span class = "lineBox"><b>Choropleth of the Life Expectancy Across Different Countries</b></span></p>
+    </div>
+
+  <!-- Drop down menu -->
+    <select id = "selectMe" class = "overlayDrop">
+      <option value="option0">2000</option>
+      <option value="option1">2001</option>
+      <option value="option2">2002</option>
+      <option value="option3">2003</option>
+      <option value="option4">2004</option>
+      <option value="option5">2005</option>
+      <option value="option6">2006</option>
+      <option value="option7">2007</option>
+      <option value="option8">2008</option>
+      <option value="option9">2009</option>
+      <option value="option10">2010</option> 
+      <option value="option11">2011</option>
+      <option value="option12">2012</option>
+      <option value="option13">2013</option> 
+      <option value="option14">2014</option> 
+    </select>
+
+  <!-- Choropleth -->
+    <div id="option0" class = "group">
+      <div id = "map0"></div>
+    </div>
+    <div id="option1" class = "group">
+      <div id = "map1"></div>
+    </div>
+    <div id = "option2" class = "group">
+      <div id = "map2"></div>
+    </div>
+    <div id="option3" class = "group">
+      <div id = "map3"></div> <!-- choropleth -->
+    </div>
+    <div id = "option4" class = "group">
+      <div id = "map4"></div>
+    </div>
+    <div id="option5" class = "group">
+      <div id = "map5"></div>
+    </div>
+    <div id = "option6" class = "group">
+      <div id = "map6"></div>
+    </div>
+    <div id="option7" class = "group">
+      <div id = "map7"></div>
+    </div>
+    <div id = "option8" class = "group">
+      <div id = "map8"></div>
+    </div>
+    <div id="option9" class = "group">
+      <div id = "map9"></div>
+    </div>
+    <div id = "option10" class = "group">
+      <div id = "map10"></div>
+    </div>
+    <div id="option11" class = "group">
+      <div id = "map11"></div>
+    </div>
+    <div id = "option12" class = "group">
+      <div id = "map12"></div>
+    </div>
+    <div id="option13" class = "group">
+      <div id = "map13"></div>
+    </div>
+    <div id = "option14" class = "group">
+      <div id = "map14"></div>
+    </div>
+<!--     <div id = "chart"></div> -->
+
+  <!-- 3 Column info -->
+    <div class = "row center padded">
+      <div class = "four columns">
+        <h4>Life Expectancy</h4>
+        <div id = "wrap">
+            <iframe id = "frame" src="d3/graphLE.html" name="targetframe" <!-- load graph from another html -->
+            allowTransparency="no" scrolling="no" frameborder="0" ></iframe>
+        </div>
+        As shown the <Strong><u>Average Life Expectancy</u> Increases</Strong> as the year progresses.
+        That shows an approximately difference of <b>4.5</b> average years from the year <i>2000</i>
+        to the year <i>2014.</i>
+      </div>
+
+      <div class = "four columns">
+        <h4>Life Expectancy</h4>
+        <div id = "wrap">
+            <iframe id = "frame" src="d3/graphLeGdp.html" name="targetframe" 
+            allowTransparency="no" scrolling="no" frameborder="0" ></iframe>
+        </div>
+        As shown there is a  <Strong><u>STRONG</u> relationship</Strong> between GDP and the life
+        expectancy across the years.
+      </div>
+
+      <div class = "four columns">
+        <h4>Food</h4>
+        <img src="images/s1DALY.png" alt="DALY" style="width:300px; height:150px;">
+        YLD = Sum of incidence × duration × severity weight, and 
+        YLL = Sum of number of deaths × standard life expectancy at age of death
+      </div>
+    </div>
+
+    <a id = "continue" class = "button button-primary" href="#s3" onclick="$('#s3').removeClass('dont_show')">Continue</a>
+  </div>
+
+  <div id = "s3" class = "s3 dont_show">
+    <div class = "row center">
+        <div id = "chart"></div> <!-- load motion chart -->
+    </div>
+      <p>Life expectancy increases as the year progresses. This is an interactive motion chart inspired by Hans Rosling. The motion chart shows dot of different regions and their relations to life expectancy and GDP. The country with the larger radius are the country with the higher population. The dates can also be scrolled after the animation finishes to select which year to play the animation back to. This allows you to interactively view the changes over time</p>
+      <a id = "continue" class = "button button-primary" href="#s4" onclick="$('#s4').removeClass('dont_show')">Continue</a>
+  </div>
+  <div id = "s4" class = "s4 dont_show">
+    <div class = "row center">
+      <iframe src = "d3/stackedAreaChart.html" frameborder="0" height = 700px width = 600px></iframe>
+      <p>This is a Stacked Area Chart that shows the different types of factors that contribute to the overal DALY of all of the countries across the world. You can select which factor to view, by checking or unchecking, this allows you to compare each of the factors. The Stacked Area Chart also has options that allow you to check the comparison percentage or the actual figure, have a play</p>
+      <a id = "continue" class = "button button-primary" href="#s5" onclick="$('#s5').removeClass('dont_show')">Continue</a>
+    </div>
+  </div>
+  <div id = "s5" class = "s5 dont_show">
+  <div class = "row center">
+    <h1>Did you know about 1070 Lives are lost per 100, 000 of a population in Swaziland</h1>
+    <div>
+    <h3>Try calculating for other countries by dividing their DALY by their average life expectancy for the year 2014</h3>
+    </div>
+    <div class = "row center">
+    <iframe src = "d3/dashboard.html" frameborder="0" height = 400px width = 900px></iframe> <!-- loaddashboard -->
+    </div>
+    <p>There are 5 countries shown on this graph, you can view and compare each country and their DALY figure per 100, 000 of a population. The countries listed have a mixed range in terms of human developmental index. Try hovering over the pie chart or the bar chart itself. Hovering over the pie chart would allow you to view how different factors between communicable diseaese, non-communicable disease and injuries contribute to the DALY of each countries.</p>
+  </div>
+  </div>
+</div>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+
+<!-- Scripts -->
+<script src = "library/jquery-2.2.3.min.js" charset = "utf-8"></script>
+<script src = "library/d3.geomap.dependencies.min.js" charset = "utf-8"></script>
+<script src = "library/d3.geomap.min.js" charset = "utf-8"></script>
+<script src = "library/d3.geomap.js" charset = "utf-8"></script>
+<script src = "JavaScript/geoMap.js" charset = "utf-8"></script>
+<script src = "library/d3.js" charset = "utf-8"></script>
+<script src = "library/d3.min.js" charset = "utf-8"></script>
+<script src = "JavaScript/motionChart.js" charset = "utf-8"></script>
+<script src = "JavaScript/dashboard.js" charset = "utf-8"></script>
+<script src= "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
